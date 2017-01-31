@@ -10,31 +10,26 @@
 - Nginx
 
 ## DATA JSON
-For consult on endpoints paginate and alldata. POST the sample JSON.
+For consult on **endpoints paginate** `../page`. **POST** the JSON.
 ```json
 {
     "date_end": "2017-01-27", 
     "date_order": "desc", 
     "date_start": "2017-01-27", 
-    "page": 5, 
+    "page": 0, 
     "page_size": 25
 }
 ```
 
 ## API Endpoints
 
+#### Paginate all devices by endpoints per date
+```
+POST - http://api.bighacka.com/devices/all/page
 ```
 
-
-Paginate all devices by endpoints per date
-=========================================
-
-POST - http://api.bighacka.com/devices/all/page
-
-
-Paginate data by endpoints
-==========================
-
+#### Paginate data by endpoints
+```
 POST - http://api.bighacka.com/cpbr10/temperatura/page
 POST - http://api.bighacka.com/cpbr10/uv/page
 POST - http://api.bighacka.com/cpbr10/CO2/page
@@ -50,11 +45,10 @@ POST - http://api.bighacka.com/cpbr10/cxag0/page
 POST - http://api.bighacka.com/cpbr10/ctude/page
 POST - http://api.bighacka.com/cpbr10/latitude/page
 POST - http://api.bighacka.com/cpbr10/longitude/page
+```
 
-
-Get data by ID
-==============
-
+#### Get data by ID
+```
 GET - http://api.bighacka.com/cpbr10/temperatura/:{id}
 GET - http://api.bighacka.com/cpbr10/uv/:{id}
 GET - http://api.bighacka.com/cpbr10/CO2/:{id}
@@ -70,11 +64,10 @@ GET - http://api.bighacka.com/cpbr10/cxag0/:{id}
 GET - http://api.bighacka.com/cpbr10/ctude/:{id}
 GET - http://api.bighacka.com/cpbr10/latitude/:{id}
 GET - http://api.bighacka.com/cpbr10/longitude/:{id}
+```
 
-
-Last upate from device (realtime)
-=================================
-
+#### Last upate from device (realtime)
+```
 GET - http://api.bighacka.com/cpbr10/temperatura/latest
 GET - http://api.bighacka.com/cpbr10/uv/latest
 GET - http://api.bighacka.com/cpbr10/CO2/latest
@@ -90,14 +83,30 @@ GET - http://api.bighacka.com/cpbr10/cxag0/latest
 GET - http://api.bighacka.com/cpbr10/ctude/latest
 GET - http://api.bighacka.com/cpbr10/latitude/latest
 GET - http://api.bighacka.com/cpbr10/longitude/latest
-
-
-Last upate from all device (realtime)
-=================================
-
-GET - http://api.bighacka.com/cpbr10/all/latest
-
 ```
+
+#### Last upate from all device (realtime)
+```
+GET - http://api.bighacka.com/cpbr10/all/latest
+```
+
+#### Last upate from all device (realtime)
+```
+GET - http://api.bighacka.com/cpbr10/all/latest
+```
+
+#### Last upate of wifitracker by day/hour
+```
+POST - http://api.bighacka.com/cpbr10/wifitracker
+```
+Use by wifitracker **POST**.
+```json
+{
+    "date_end": "2017-01-27", 
+    "date_start": "2017-01-27" 
+}
+```
+
 
 The MIT License (MIT)
 
