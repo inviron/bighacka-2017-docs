@@ -107,6 +107,61 @@ Use by wifitracker **POST**.
 }
 ```
 
+#### Example consult POST data on wifitracker
+In this sample we use a framework to wraper a curl execution, called [HTTPie](https://httpie.org/).
+```sh
+$ http --verbose post http://api.bighacka.com/cpbr10/wifitracker date_start=2017-02-01 date_end=2017-02-01
+```
+And we got that info after request.
+```
+POST /cpbr10/wifitracker HTTP/1.1
+Accept: application/json, */*
+Accept-Encoding: gzip, deflate
+Connection: keep-alive
+Content-Length: 54
+Content-Type: application/json
+Host: api.bighacka.com
+User-Agent: HTTPie/0.9.6
+
+{
+    "date_end": "2017-02-01", 
+    "date_start": "2017-02-01"
+}
+
+HTTP/1.1 200 OK
+Connection: keep-alive
+Content-Encoding: gzip
+Content-Length: 315
+Content-Type: application/json; charset=utf-8
+Date: Wed, 01 Feb 2017 15:14:38 GMT
+Server: nginx/1.1.19
+Vary: Origin
+
+{
+    "results": [
+        {
+            "day": 1, 
+            "facs": 35, 
+            "hour": 0, 
+            "macs": 735, 
+            "month": 2, 
+            "powers": 36, 
+            "total": 1089, 
+            "year": 2017
+        }, 
+        {
+            "day": 1, 
+            "facs": 41, 
+            "hour": 1, 
+            "macs": 896, 
+            "month": 2, 
+            "powers": 41, 
+            "total": 1484, 
+            "year": 2017
+        }, 
+        {...}
+}
+```
 
 The MIT License (MIT)
 
